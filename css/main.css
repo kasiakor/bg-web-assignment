@@ -3,6 +3,7 @@
 		COLOUR GUIDE
 GOLD:  rgb(172, 140, 71)
 WHITE: rgb(226, 226, 226)
+BLACK: rgb(15, 15, 15)
 -----------------------------*/
 
 /*---------------------------
@@ -224,6 +225,22 @@ a:active {
 	border-radius: 8px;
 
 }
+
+.btn {
+ 	margin-top: 40px;
+ 	padding: 10px 30px;
+ 	font-size: 1em;
+ 	color: #fff;
+ 	background-color: rgb(172, 140, 71);
+ 	border: none;
+ 	cursor: pointer;
+ 	transition: 0.3s ease;
+  }
+ 
+.btn a {
+ 	color: #fff;
+ 	text-decoration: none;
+ }
 
 .featured-info h3 {
 
@@ -547,21 +564,9 @@ header .header-info .search {
  	padding: 30px;
  	background-color: #343434;
  }
- .sign-btn {
- 	margin-top: 40px;
- 	padding: 10px 30px;
- 	font-size: 1em;
- 	color: #fff;
- 	background-color: rgb(172, 140, 71);
- 	border: none;
- 	cursor: pointer;
- 	transition: 0.3s ease;
- 	float: right;
- }
- .sign-btn a {
- 	color: #fff;
- 	text-decoration: none;
- }
+
+
+
 
  @media (min-width: 360px) {
  	.sign-btn {
@@ -601,6 +606,60 @@ header .header-info .search {
  	border: 1px solid #ccc;
  	box-sizing: border-box;
  }
+
+/*---------------------------
+    DRAWER STYLES
+-----------------------------*/
+
+.container .content-wrapper .title-wrapper {
+    display: flex;
+    position: relative;
+}
+
+.container .content-wrapper .price-btn {
+    position:absolute;
+    right: 0;
+    margin-top: 20px;
+    opacity: 0.5;
+}
+
+.container .content-wrapper button:disabled {
+    border: 1px solid #999999;
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
+    pointer-events: all !important;
+}
+
+.container .content-wrapper .featured-info.drawer {
+    width: 600px;
+}
+
+.container .content-wrapper .featured-info.drawer .featured-img {
+    padding: 0;
+    border: none;
+}
+
+.container .content-wrapper .featured-info .btn-col {
+    text-align: justify;
+}
+
+.container .content-wrapper .featured-info .year-btn {
+    padding: 7px 35px;
+    border: 1px solid #eee;
+    border-radius: 5%;
+    background: rgb(15, 15, 15);
+}
+
+.container .content-wrapper .featured-info button.last-line {
+    width: 100%;
+    height:0;
+    visibility: hidden;
+}
+
+.container .content-wrapper .featured-info .book-btn {
+    float: right;
+}
 
 /*---------------------------
     FOOTER STYLES

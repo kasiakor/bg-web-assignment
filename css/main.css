@@ -621,6 +621,7 @@ header .header-info .search {
     right: 0;
     margin-top: 20px;
     opacity: 0.5;
+    pointer-events: none;
 }
 
 .container .content-wrapper button:disabled {
@@ -631,7 +632,7 @@ header .header-info .search {
     pointer-events: all !important;
 }
 
-.container .content-wrapper .featured-info.drawer {
+.container-drawer .content-wrapper .featured-info.drawer {
     width: 600px;
 }
 
@@ -644,17 +645,19 @@ header .header-info .search {
     text-align: justify;
 }
 
+.container .content-wrapper .featured-info .btn-col::after {
+    content: "";
+    width: 100%;
+    height: 0;
+    visibility: hidden;
+    display: inline-block;
+}
+
 .container .content-wrapper .featured-info .year-btn {
     padding: 7px 35px;
     border: 1px solid #eee;
     border-radius: 5%;
     background: rgb(15, 15, 15);
-}
-
-.container .content-wrapper .featured-info button.last-line {
-    width: 100%;
-    height:0;
-    visibility: hidden;
 }
 
 .container .content-wrapper .featured-info .book-btn {

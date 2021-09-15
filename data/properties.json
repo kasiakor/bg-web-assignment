@@ -1,0 +1,175 @@
+[
+   {
+      "id":"1",
+      "title":"Marsida",
+      "region":"Hellas Planitia",
+      "peopleViewing":2,
+      "shortDescription":"Newly Renovated House with the Earth View",
+      "longDescription":"For rent 2-storey house of 84 sq.meters in Hellas Planitia. The ground floor consists of living room with kitchen, one bathroom, one storeroom. The first floor consists of 2 bedrooms. A magnificent view of the Earth, the sea, the mountain, the forest opens up from the windows. ",
+      "cancellationPolicy":"Non-refundable",
+      "price":"345",
+      "rating":"3",
+      "imageName":"property1",
+      "imageAlt":"property 1 image",
+      "amenities":"Oxygen, Water, Bathroom, Earth view",
+      "availability":[
+         2081,
+         2082,
+         2084,
+         2085,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"2",
+      "title":"Asteria",
+      "region":"Aeria and Arabia",
+      "peopleViewing":8,
+      "shortDescription":"Remodeled House With Unobstructed Views",
+      "longDescription":"For rent a house of 125 sq.m. in the region of Aeria and Arabia. Two storey house is a part of a complex of houses, which contains a swimming pool and a garden with many beautiful trees. The house consists of a living room with a kitchen, a bedroom, and a bathroom on the 1st floor.  The second floor consists of 3 bedrooms, a bathroom and a big balcony. ",
+      "cancellationPolicy":"Non-refundable",
+      "price":"745",
+      "rating":"5",
+      "imageName":"property2",
+      "imageAlt":"property 2 image",
+      "amenities":"Oxygen, Water, Solar panel, Automatic lighting, Garden",
+      "availability":[
+         2081,
+         2083,
+         2084,
+         2085,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"3",
+      "title":"Landaria",
+      "region":"Chryse Planitia",
+      "peopleViewing":9,
+      "shortDescription":"Newly Built Home with Every Upgrade Imaginable",
+      "longDescription":"For rent 1-storey house of 101 sq.meters in the region of Chryse Planitia. The house consists of 2 bedrooms, living room with kitchen, one shower WC. A magnificent view of the sea, the mountain opens up from the windows. ",
+      "cancellationPolicy":"Non-refundable",
+      "price":"500",
+      "rating":"3",
+      "imageName":"property3",
+      "imageAlt":"property 3 image",
+      "amenities":"Oxygen, Water, Parking Space, Barbecue area",
+      "availability":[
+         2081,
+         2082,
+         2083,
+         2084,
+         2085,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"4",
+      "title":"Rodeo",
+      "region":"Aeria and Arabia",
+      "peopleViewing":5,
+      "shortDescription":"Elegant Modern Ranch-style House",
+      "longDescription":"For rent 2-storey ranch-style house of 270 sq.meters in Aeria and Arabia. The ground floor consists of 2 bedrooms, living room with kitchen, one shower WC. The first floor consists of one bedroom, living room with kitchen, one bathroom, one shower WC. A magnificent view of the sea, the mountain opens up from the windows. ",
+      "cancellationPolicy":"3 Months",
+      "price":"990",
+      "rating":"5",
+      "imageName":"property4",
+      "imageAlt":"property 4 image",
+      "amenities":"Oxygen, Water, Parking Space, Swimming pool, Garage",
+      "availability":[
+         2081,
+         2082,
+         2083,
+         2084,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"5",
+      "title":"Villatio",
+      "region":"Memnonia",
+      "peopleViewing":1,
+      "shortDescription":"Bright Stunning Villa",
+      "longDescription":"For rent 2-storey villa of 142 sq.meters in Memnonia. The ground floor consists of one bedroom, living room, one kitchen, one shower WC. The first floor consists of 2 bedrooms, one shower WC, one dressing room.",
+      "cancellationPolicy":"6 Months",
+      "price":"850",
+      "rating":"4",
+      "imageName":"property5",
+      "imageAlt":"property 5 image",
+      "amenities":"Oxygen, Water, Alarm system, Barbecue area, Air condition",
+      "availability":[
+         2082,
+         2083,
+         2084,
+         2086
+      ]
+   },
+   {
+      "id":"6",
+      "title":"Rocky Star",
+      "region":"Ausonia",
+      "peopleViewing":2,
+      "shortDescription":"Duplex at the Mountain",
+      "longDescription":"For rent duplex of 100 sq.meters in Ausonia. The duplex is situated on the ground floor and the first floor. The ground floor consists of living room with kitchen, one WC. The first floor consists of 3 bedrooms, one bathroom. ",
+      "cancellationPolicy":"2 Months",
+      "price":"390",
+      "rating":"3",
+      "imageName":"property6",
+      "imageAlt":"property 6 image",
+      "amenities":"Oxygen, Water, Alarm system, Solar panel, Parking space",
+      "availability":[
+         2081,
+         2082,
+         2084,
+         2085,
+         2086,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"7",
+      "title":"Stables",
+      "region":"Zephyria",
+      "peopleViewing":6,
+      "shortDescription":"On-of-a-kind Bungalow with a Barn",
+      "longDescription":"For rent bungalow of 120 sq.meters in the region of Zephyria. The bungalow consists of 2 bedrooms, living room with kitchen, one shower WC, one storeroom. A magnificent view of the sea opens up from the windows. Old fashioned barn at the house. ",
+      "cancellationPolicy":"4 Months",
+      "price":"790",
+      "rating":"",
+      "imageName":"property7",
+      "imageAlt":"property 7 image",
+      "amenities":"Oxygen, Water, Solar panel, Barbecue area, Garden",
+      "availability":[
+         2084,
+         2085,
+         2086,
+         2087,
+         2088
+      ]
+   },
+   {
+      "id":"8",
+      "title":"Lavendaria",
+      "region":"Libya",
+      "peopleViewing":8,
+      "shortDescription":"Beautiful Cottage in Rustic Style",
+      "longDescription":"For rent a beautiful cottage of 145 sq.meters. The cottage is located in a mountain village, located 160 m above sea level, with a permanent population of about 1,000 people. The village has a school, kindergarten, cultural centers, agrarian doctor and the shops. ",
+      "cancellationPolicy":"2 Months",
+      "price":"660",
+      "rating":"5",
+      "imageName":"property8",
+      "imageAlt":"property 8 image",
+      "amenities":"Oxygen, Water, Solar panel, Air condition, Barbecue area",
+      "availability":[
+         2083,
+         2085,
+         2086,
+         2088
+      ]
+   }
+]

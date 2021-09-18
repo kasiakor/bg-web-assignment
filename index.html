@@ -41,24 +41,34 @@
 		</footer>
 	</div>
     <script>  
-        document.addEventListener("properties-loaded", function(e) {
-            $("html").hover(function() {
+        var propertiesInterval = setInterval(function(){
+            if ($("#properties-wrapper .featured-img").length > 0) {
                 $("#properties-wrapper .featured-img").hover(function() {
                     $(".container-drawer").each(function() {
                         $(this).css("display", "none");
                     })
                     var propId = $(this).attr('id').substring(3);
                     $(`#drawer-${propId}`).css("display", "block");
-                    $("#properties-drawer")[0].style.right = '0';
+                    setTimeout(function(){$("#properties-drawer")[0].style.right = '0';}, 0);
+                    $("button.btn.year-btn").click(function(){$(this).toggleClass("booked");});
                 });
-            });
+                clearInterval(propertiesInterval);
+            }
+        }, 10);
 
-        }, false);
+        var drawerInterval = setInterval(function(){
+            if ($("#properties-drawer .container-drawer").length > 0) {
+                $("button.btn.year-btn").click(function(){$(this).toggleClass("booked");});
+                clearInterval(drawerInterval);
+            }
+        }, 10);
 
-        var specifiedElement = document.getElementById("properties-drawer");
-        document.addEventListener("click", function(event) {
-            var isClickInside = specifiedElement.contains(event.target);
-            if (!isClickInside) {
+
+        var drawerElement = document.getElementById("properties-drawer");
+            document.addEventListener("click", function(event) {
+            var isClickInside = drawerElement.contains(event.target);
+            var drawerShown = $("#properties-drawer")[0].style.right[0] === "0";
+            if (!isClickInside && drawerShown) {
                 $("#properties-drawer")[0].style.right = '-500px';
             }
         });

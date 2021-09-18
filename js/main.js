@@ -9,6 +9,7 @@ window.addEventListener('load', function() {
                 renderProperty(element);
             })
         });
+    //TODO: add catch
 });
 
 
@@ -39,7 +40,7 @@ function renderProperty(property) {
     htmlObject.innerHTML = propertyTemplate;
     document.getElementById("properties-wrapper").appendChild(htmlObject);
 
-    var drawerTemplate = createPropertyDrawer(propImg, propImgAlt, propTitle, propRegion, propPrice, propRating, propLongDescription, propAmenities, propAvailability);
+    var drawerTemplate = createPropertyDrawer(propId, propImg, propImgAlt, propTitle, propRegion, propPrice, propRating, propLongDescription, propAmenities, propAvailability);
     var htmlObject2 = document.createElement('div');
     htmlObject2.innerHTML = drawerTemplate;
     document.getElementById("properties-drawer").appendChild(htmlObject2);
@@ -48,9 +49,9 @@ function renderProperty(property) {
 
 function createPropertyTemplate(id, imageName, imageAlt, title, region, peopleViewing, shortDescription, cancellationPolicy, price, rating) {
 
-    return `<div class="featured-info">
-        <img id="prop-id-${id}" class="featured-img img-sm" src="images/${imageName}-w200.jpg" alt="${imageAlt}" />
-        <img class="featured-img img-md" src="images/${imageName}-w400.jpg" alt="${imageAlt}"/>
+    return `<div class="featured-info" >
+        <img id="sm-prop-id-${id}" class="featured-img img-sm" src="images/${imageName}-w200.jpg" alt="${imageAlt}" />
+        <img id="md-prop-id-${id}" class="featured-img img-md" src="images/${imageName}-w400.jpg" alt="${imageAlt}"/>
         <p class="viewers"><i>${peopleViewing} people checking it now</i></p>
         <h4>${title} - ${region} Region</h4>
         <p>${shortDescription}</p>
@@ -76,14 +77,14 @@ function createRatingTemplate(rating) {
 }
 
 
-function createPropertyDrawer(imageName, imageAlt, title, region, price, rating, longDescription, amenities, availability) {
+function createPropertyDrawer(id, imageName, imageAlt, title, region, price, rating, longDescription, amenities, availability) {
     var disabledYear = function(year, availability) {
         if (!availability.includes(year)) {
             return 'disabled=""';
         }
         return "";
-    };
-    return `<div class="container-drawer">
+    }
+    return `<div id="drawer-prop-id-${id}" class="container-drawer">
             <div class="content-wrapper">
                 <div class="featured-info drawer">
                     <img class="featured-img img-lg" src="images/${imageName}-w800.jpg" alt="${imageAlt}" />
@@ -93,7 +94,7 @@ function createPropertyDrawer(imageName, imageAlt, title, region, price, rating,
                     </div>
                     ${createRatingTemplate(rating)}
                     <p>${longDescription}</p>
-                    <h4>Amenities: ${amenities}</h4>
+                    <p class="prop-amenities"><span>Amenities: </span>${amenities}</p>
                     <div id="btn-year1">
                         <button type="button" ${disabledYear(2081, availability)} class="btn year-btn">2081</button>
                         <button type="button" ${disabledYear(2082, availability)}  class="btn year-btn">2082</button>
@@ -111,3 +112,41 @@ function createPropertyDrawer(imageName, imageAlt, title, region, price, rating,
             </div>
         </div>`
 }
+
+//handle drawer animation
+var propertiesInterval = setInterval(function() {
+    if ($("#properties-wrapper .featured-img").length > 0) {
+        $("#properties-wrapper .featured-img").hover(function() {
+            $(".container-drawer").each(function() {
+                $(this).css("display", "none");
+            })
+            var propId = $(this).attr('id').substring(3);
+            $(`#drawer-${propId}`).css("display", "block");
+            setTimeout(function() {
+                $("#properties-drawer")[0].style.right = '0';
+            }, 0);
+            $("button.btn.year-btn").click(function() {
+                $(this).toggleClass("booked");
+            });
+        });
+        clearInterval(propertiesInterval);
+    }
+}, 10);
+
+var drawerInterval = setInterval(function() {
+    if ($("#properties-drawer .container-drawer").length > 0) {
+        $("button.btn.year-btn").click(function() {
+            $(this).toggleClass("booked");
+        });
+
+        var drawerElement = document.getElementById("properties-drawer");
+        document.addEventListener("click", function(event) {
+            var isClickInside = drawerElement.contains(event.target);
+            var drawerShown = $("#properties-drawer")[0].style.right[0] === "0";
+            if (!isClickInside && drawerShown) {
+                $("#properties-drawer")[0].style.right = '-500px';
+            }
+        });
+        clearInterval(drawerInterval);
+    }
+}, 10);

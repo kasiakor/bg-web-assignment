@@ -40,39 +40,7 @@
 			<p>© 2080 Blueground Development. All Rights Reserved.</p>
 		</footer>
 	</div>
-    <script>  
-        var propertiesInterval = setInterval(function(){
-            if ($("#properties-wrapper .featured-img").length > 0) {
-                $("#properties-wrapper .featured-img").hover(function() {
-                    $(".container-drawer").each(function() {
-                        $(this).css("display", "none");
-                    })
-                    var propId = $(this).attr('id').substring(3);
-                    $(`#drawer-${propId}`).css("display", "block");
-                    setTimeout(function(){$("#properties-drawer")[0].style.right = '0';}, 0);
-                    $("button.btn.year-btn").click(function(){$(this).toggleClass("booked");});
-                });
-                clearInterval(propertiesInterval);
-            }
-        }, 10);
 
-        var drawerInterval = setInterval(function(){
-            if ($("#properties-drawer .container-drawer").length > 0) {
-                $("button.btn.year-btn").click(function(){$(this).toggleClass("booked");});
-                clearInterval(drawerInterval);
-            }
-        }, 10);
-
-
-        var drawerElement = document.getElementById("properties-drawer");
-            document.addEventListener("click", function(event) {
-            var isClickInside = drawerElement.contains(event.target);
-            var drawerShown = $("#properties-drawer")[0].style.right[0] === "0";
-            if (!isClickInside && drawerShown) {
-                $("#properties-drawer")[0].style.right = '-500px';
-            }
-        });
-    </script>
 </body>
 
 </html>

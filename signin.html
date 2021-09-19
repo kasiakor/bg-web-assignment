@@ -12,17 +12,43 @@
 	<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script>
+       window.addEventListener('load', function() {
+        var btnForm = document.getElementsByClassName("signin-btn")[0];
+        btnForm.addEventListener('click', function() {
+        var email = document.getElementById("formEmail").value;
+        var password = document.getElementById("formPassword").value;
+        params = {
+            email,
+            password
+        }
+            
+        const myRequest = new Request('http://mars.theblueground.net/api/auth/login');
+        fetch(myRequest, {
+                method: "POST",
+                mode: 'cors',
+                body: JSON.stringify(params),
+            })
+            .then(response => response.json())
+            .then(data => {
+
+            console.info(data)
+        });
+    });
+});
+
+    </script>
 </head>
 
 <body class="signin-page">
 	<div class=container>
-		<div class="wrapper-1">
-			<div class="wrapper-2">
+		<div class="signin-wrapper-1">
+			<div class="signin-wrapper-2">
 				<h2>Blueground on <span class="circle">Mars</span></h2>
-				<form method="post" action="index.html">
-					<input type="text" placeholder="Colonist Id" name="uname" required>
-					<input type="password" placeholder="Password" name="psw" required>
-					<button type="submit" class="btn sign-btn">Sign in</button>
+				<form method="post" action="javascript:void(0)">
+					<input type="text" placeholder="Colonist Id" name="uname" id="formEmail" required>
+					<input type="password" placeholder="Password" name="psw" id="formPassword" required>
+					<button type="submit" class="btn signin-btn">Sign in</button>
 				</form>
 			</div>
 		</div>

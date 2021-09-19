@@ -22,7 +22,7 @@ BLACK: rgb(15, 15, 15)
          font-size: 1.2em;
          padding: 1% 2%;
     }
-}
+}/* media query for 768px*/
  .container {
      background: rgb(15, 15, 15);
     /* IE8 */
@@ -70,10 +70,9 @@ h4 {
          font-size: 1.75em;
          line-height: 1.25em;
     }
-}
+}/* media query for 768px*/
  p {
      font-size: 0.75em;
-     line-height: 1.25em;
      margin-top: 1.42em;
      margin-bottom: 0;
      font-weight: 100;
@@ -138,7 +137,7 @@ h4 {
          width: 30%;
          margin-left: 3%;
     }
-}
+}/* media query for 1024px*/
 
 /*--------------------------- LOGO STYLES -----------------------------*/
 

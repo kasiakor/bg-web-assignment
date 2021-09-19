@@ -10,6 +10,8 @@ window.addEventListener('load', function() {
             })
         });
     //TODO: add catch
+    
+    loadUsername();
 });
 
 
@@ -147,3 +149,12 @@ var drawerInterval = setInterval(function() {
         clearInterval(drawerInterval);
     }
 }, 10);
+
+
+function loadUsername() {
+    username = document.cookie ? JSON.parse(document.cookie)?.username : undefined;
+    if( $("#user-info") && username ) {
+        $("#user-info")[0].innerHTML = username;
+    }    
+}
+    

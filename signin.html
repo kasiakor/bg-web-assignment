@@ -12,6 +12,8 @@
 	<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32" />
 	<link rel="stylesheet" type="text/css" href="css/normalize.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
     <script>
        window.addEventListener('load', function() {
         var btnForm = document.getElementsByClassName("signin-btn")[0];
@@ -23,17 +25,31 @@
             password
         }
             
-        const myRequest = new Request('https://mars.theblueground.net/api/auth/login');
-        fetch(myRequest, {
-                method: "POST",
-                mode: 'cors',
-                body: JSON.stringify(params),
-            })
-            .then(response => response.json())
-            .then(data => {
+        var url = "https://mars.theblueground.net/api/auth/login";
 
-            console.info(data)
-        });
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", url);
+
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        xhr.onreadystatechange = function () {
+           if (xhr.readyState === 4) {
+              console.log(xhr.status);
+              console.log(JSON.parse(xhr.responseText));
+              console.log(xhr);
+              console.info(xhr.user);
+              var responseText = xhr.responseText;
+              if (xhr.status === 200 && responseText) {
+                username = JSON.parse(responseText)?.user?.name;
+                document.cookie = JSON.stringify({username});
+                window.location.href = 'index.html';
+           }
+           }};
+
+        var data = JSON.stringify(params);
+        console.info(data);
+        xhr.send(data);       
+
     });
 });
 

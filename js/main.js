@@ -31,8 +31,6 @@ function renderProperty(property) {
     var propLongDescription = property["longDescription"];
     var propAmenities = property["amenities"];
     var propAvailability = property["availability"];
-    var propYear1 = document.getElementById("btn-year1");
-    var propYear2 = document.getElementById("btn-year2");
 
 
     var propertyTemplate = createPropertyTemplate(propId, propImg, propImgAlt, propTitle, propRegion, propViewers, propShortDescription, propCancellation, propPrice, propRating);
@@ -65,7 +63,6 @@ function createRatingTemplate(rating) {
     var maxStars = 5;
     var stars = "";
     var diff = maxStars - rating;
-    console.log(diff);
 
     for (var index = 0; index < rating; index++)
         stars += '<span class="fa fa-star checked"/>';

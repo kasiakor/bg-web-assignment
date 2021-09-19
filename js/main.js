@@ -1,5 +1,5 @@
 window.addEventListener('load', function() {
-    const myRequest = new Request('/data/properties.json');
+    const myRequest = new Request('data/properties.json');
 
     fetch(myRequest)
         .then(response => response.json())
